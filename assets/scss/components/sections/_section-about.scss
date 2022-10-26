@@ -1,0 +1,132 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.about {
+  letter-spacing: 0.055em;
+
+  background-color: $color-gray-light;
+
+  @include lg-min {
+    padding-top: $gap-x5;
+    padding-bottom: $gap-x5;
+  }
+  @include lg-md {
+    padding-top: $gap-x4;
+    padding-bottom: $gap-x4;
+  }
+  @include md {
+    padding-top: $gap-x3;
+    padding-bottom: $gap-x3;
+  }
+
+  &__container {
+    display: grid;
+
+    @extend %container;
+    @include lg-min {
+      gap: $gap-x5;
+      grid-template-columns: 1fr 271px;
+    }
+    @include lg-md {
+      gap: $gap-x2;
+      grid-template-columns: 1fr 271px;
+    }
+    @include md-sm {
+      gap: $gap;
+      grid-template-columns: 1fr 236px;
+    }
+    @include sm {
+      gap: $gap;
+    }
+  }
+
+  &__content {
+    p {
+      color: $color-gray;
+
+      @include lg-min {
+        font-size: 1.125rem;
+      }
+
+      &:first-of-type {
+        position: relative;
+
+        margin-top: -5px;
+
+        &:after {
+          position: absolute;
+          top: 0;
+
+          width: 2px;
+          height: 200px;
+
+          content: "";
+
+          background-color: rgba($color-gray, 0.1);
+
+          @include lg-min {
+            right: -$gap - 30px;
+          }
+          @include lg-md {
+            right: -$gap;
+          }
+          @include md-sm {
+            right: -$gap-sm;
+          }
+        }
+      }
+
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 3rem;
+
+    letter-spacing: 0.1em;
+
+    color: $color-primary;
+
+    line-height: 1.2em;
+
+    @include lg-min {
+      margin-bottom: 3rem;
+
+      font-size: 2.5rem;
+    }
+    @include lg-md {
+      margin-bottom: 2.625rem;
+
+      font-size: 2rem;
+    }
+    @include md-sm {
+      margin-bottom: 2.25rem;
+
+      font-size: 1.5rem;
+    }
+    @include sm {
+      margin-bottom: 2.25rem;
+
+      text-align: center;
+
+      font-size: 1.5rem;
+    }
+  }
+
+  &__img-item {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    max-width: 100%;
+    max-height: 480px;
+  }
+}
+
+
+
