@@ -1,0 +1,1 @@
+[![pages-build-deployment](https://github.com/KyryloStupatskyi/courseWork/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/KyryloStupatskyi/courseWork/actions/workflows/pages/pages-build-deployment)
