@@ -1,0 +1,86 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.form {
+  padding-top: $gap-lg;
+  padding-bottom: $gap-lg;
+
+  background-color: $color-primary;
+
+  &__container {
+    display: grid;
+
+    @extend %container;
+    gap: $gap;
+    @include md-min {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md-sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+
+  &-item {
+    @include md-sm {
+      &:first-of-type {
+        grid-column: 1 / span 2;
+      }
+    }
+
+    &__input {
+      width: 100%;
+      height: 60px;
+      padding-right: $gap-lg;
+      padding-left: $gap-lg;
+
+      transition: 0.5s;
+
+      border: 2px solid rgba($color: $color-light, $alpha: 0);
+      border-bottom: 2px solid $color-gray;
+      background-color: rgba($color-light, 0.05);
+
+      &::placeholder {
+        letter-spacing: 0.15em;
+
+        color: $color-gray;
+
+        font-size: 1.125rem;
+        line-height: 39px;;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: rgba($color: $color-light, $alpha: 0.15);
+        border-bottom-color: $color-light;
+        background-color: rgba($color-light, 0.15);
+
+        &::placeholder {
+          color: lighten($color: $color-gray, $amount: 15%);
+        }
+      }
+    }
+
+    &__btn {
+      width: 100%;
+      height: 60px;
+      padding: 0.5em 1em;
+
+      transition: 0.5s;
+      letter-spacing: 0.1em;
+
+      color: $color-light;
+      border: 2px solid rgba($color: $color-light, $alpha: 0);
+      border-bottom: 2px solid $color-gray;
+      background-color: rgba($color-light, 0.10);
+
+      font-size: 1.125rem;
+
+      &:hover,
+      &:focus {
+        border-color: rgba($color: $color-light, $alpha: 1.0);
+        background-color: $color_accent;
+      }
+    }
+  }
+}
