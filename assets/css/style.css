@@ -165,6 +165,7 @@ template {
 [hidden] {
   display: none;
 }
+.footer__container,
 .posts__container,
 .form__container,
 .about__container,
@@ -844,6 +845,70 @@ input:focus {
   padding-bottom: 20px;
 
   gap: 20px;
+}
+.footer {
+  padding: 50px 20px 70px;
+
+  text-align: center;
+
+  background-color: #2d3651;
+}
+.footer__socials {
+  position: relative;
+
+  display: grid;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  margin-bottom: 40px;
+
+  grid-template-columns: repeat(auto-fit, minmax(50px, -webkit-max-content));
+  grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+}
+.footer__socials::after {
+  position: absolute;
+  bottom: -20px;
+  left: calc(50% - 38px);
+
+  width: 76px;
+  height: 2px;
+
+  content: "";
+
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer__socials a {
+  padding: 10px;
+
+  -webkit-transition: color 0.5s;
+       -o-transition: color 0.5s;
+          transition: color 0.5s;
+
+  color: #ffffff;
+}
+.footer__socials a:hover,
+.footer__socials a:focus {
+  color: #d66926;
+}
+.footer__content span:nth-of-type(1) {
+  margin-right: -0.5em;
+
+  letter-spacing: 0.33em;
+
+  color: #637588;
+
+  font-weight: 100;
+}
+.footer__content span:nth-of-type(2) {
+  letter-spacing: 0.05em;
+
+  color: #e5e5e5;
+
+  font-weight: 700;
+}
+.footer .fa-brands {
+  font-size: 2.25rem;
 }
 @media (min-width: 576px) {
   .posts__actions {

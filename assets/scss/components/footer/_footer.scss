@@ -1,0 +1,77 @@
+@use "../../mixins" as *;
+@use "../../presets" as *;
+
+.footer {
+  padding: 50px $gap 70px;
+
+  text-align: center;
+
+  background-color: $color-primary;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__socials {
+    position: relative;
+
+    display: grid;
+    justify-content: center;
+
+    margin-bottom: $gap-x2;
+
+    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+
+    &::after {
+      position: absolute;
+      bottom: -$gap;
+      left: calc(50% - 76px / 2);
+
+      width: 76px;
+      height: 2px;
+
+      content: "";
+
+      background-color: rgba($color: $color-light, $alpha: 0.1);
+    }
+
+    a {
+      padding: $gap-sm;
+
+      transition: color 0.5s;
+
+      color: $color-light;
+
+      &:hover,
+      &:focus {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &__content {
+    span {
+      &:nth-of-type(1) {
+        margin-right: -0.5em;
+
+        letter-spacing: 0.33em;
+
+        color: $color-gray;
+
+        font-weight: 100;
+      }
+
+      &:nth-of-type(2) {
+        letter-spacing: 0.05em;
+
+        color: $color-gray-light;
+
+        font-weight: 700;
+      }
+    }
+  }
+
+  .fa-brands {
+    font-size: 2.25rem;
+  }
+}
