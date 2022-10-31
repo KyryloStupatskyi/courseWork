@@ -5,6 +5,7 @@
   padding-top: $gap-lg;
   padding-bottom: $gap-lg;
 
+  color: $color-light;
   background-color: $color-primary;
 
   &__container {
@@ -35,18 +36,21 @@
       padding-left: $gap-lg;
 
       transition: 0.5s;
+      letter-spacing: 0.15em;
 
+      color: $color-light;
       border: 2px solid rgba($color: $color-light, $alpha: 0);
       border-bottom: 2px solid $color-gray;
       background-color: rgba($color-light, 0.05);
+
+      font-size: 1.125rem;
 
       &::placeholder {
         letter-spacing: 0.15em;
 
         color: $color-gray;
 
-        font-size: 1.125rem;
-        line-height: 39px;        ;
+        line-height: 39px;
       }
 
       &:hover,
